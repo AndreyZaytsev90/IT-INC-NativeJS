@@ -80,3 +80,5 @@ const updatedStudents = [...students, newStudent]; // раскукожили с�
 //updatedStudents2.push();
 
 const filterUpdatedStudents = students.filter((st) => st.scores === 85);
+
+const newStudents = [...students, { ...students[0], isMarried: true }];
