@@ -116,3 +116,7 @@ console.log(getFilteredArray(students, (el) => el.age > 20));
 console.log(students.filter((el) => el.age > 20));
 
 console.log(findEl(students, (el) => el.name === "Bob"));
+
+const arr = new Array(); // []
+const arr1 = new Array(3); // [ , , ]
+const arr2 = new Array(1, 2, 3); // [1,2,3]
