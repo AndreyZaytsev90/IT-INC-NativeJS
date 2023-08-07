@@ -120,3 +120,30 @@ console.log(findEl(students, (el) => el.name === "Bob"));
 const arr = new Array(); // []
 const arr1 = new Array(3); // [ , , ]
 const arr2 = new Array(1, 2, 3); // [1,2,3]
+
+Array.prototype.sayHi = function () {
+  alert("Hi, samurai!");
+};
+
+const arr3 = [];
+arr3.sayHi();
+
+function getLength() {
+  return this.length; // this нечто, что будет определено в момент вызова ФУНКЦИИ (контекст вызова)
+}
+Array.prototype.getLength = getLength; // записали метод getLength в прототип getLength
+
+console.log(arr1.getLength());
+console.log(arr2.getLength());
+
+Array.prototype.findEl = function (searchCondFunc) {
+  for (let index = 0; index < this.length; index++) {
+    if (searchCondFunc(this[index]) === true) {
+      return this[index];
+    }
+  }
+  return false;
+};
+
+console.log(students.findEl((el) => el.name === "John"));
+console.log(arr2.findEl((el) => el > 2));
